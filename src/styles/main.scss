@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+@import '~bulma/bulma.sass';
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  justify-content: flex-start;
+}
+.register-container {
+  .join-message {
+    height: 100px;
+    border-bottom: 2px solid white;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 50px;
+    font-weight:bolder;
+    padding-left: 10px
+  }
+  .form {
+    font-size: 20px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .register-input {
+    width: 600px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  label {
+    font-size: 20px;
+    color: white;
+  }
+  button {
+    width: 600px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: white;
+  height: 1000px;
+  background-image: linear-gradient(#244f95, #003791);
+  background-repeat: no-repeat;
+}
+
+.second-container {
+  width: 1500px;
+}
+
+.third-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 600px;
+  .sign-in {
+    display: flex;
+    margin-top: 60px;
+  }
+  .welcome-message {
+    display: flex;
+    h3 {
+      color: white;
+    }
+  }
+}
+
+.landing {
+  border: 1px solid black;
+  width: 200px;
+  height: 300px;
+  align-items: center;
+  margin: 0 10px;
+}
+
+#new-user {
+  width: 200px;
+  height: 298px;
+}
+
+.register {
+  background: rgb(22, 22, 99);
+}
+
+
+.ps4-logo {
+  margin-top: 30px;
+  margin-left: 10px;
+  width: 200px;
+  height: 50px;
+}
+
+
+
+
+
