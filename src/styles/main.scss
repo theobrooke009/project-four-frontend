@@ -5,7 +5,15 @@
 .container {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   flex-direction: column;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
@@ -30,6 +38,19 @@
     justify-content: center;
     align-items: center;
   }
+
+  .sign-in-form {
+    font-size: 20px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    .back-to-register {
+      margin-top: 40px;
+      width: 750px;
+    } 
+  }
   .register-input {
     width: 600px;
     height: 40px;
@@ -50,7 +71,7 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
   color: white;
   height: 1000px;
-  background-image: linear-gradient(#244f95, #003791);
+  background-image: linear-gradient(#4c6791, #003791);
   background-repeat: no-repeat;
 }
 
@@ -93,13 +114,139 @@ body {
   background: rgb(22, 22, 99);
 }
 
+.header-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
+.logo-container{
+  margin-bottom: 30px;
+}
 
 .ps4-logo {
-  margin-top: 30px;
-  margin-left: 10px;
-  width: 200px;
+  
+  margin-left: 30px;
+  width: 400px;
   height: 50px;
 }
+.ps-logo {
+  height: 50px;
+}
+
+.games-card {
+  display:flex;
+    img {
+      height: 225px;
+      width: 225px;
+    }
+    .card-content {
+      width: 175px;
+      height: 175px;
+      color: white;
+    }
+}
+
+
+.games-container {
+  display: flex;
+  width: 1500px;
+  margin: 0 400px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: row;
+
+
+}
+
+.game-section {
+  
+  border: 2px solid red;
+  padding: 5px;
+  margin: 20px;
+  background-color: rgb(0, 52, 137);
+  color: white;
+  h1 {
+    font-weight:bolder;
+  }
+}
+
+.new-game {
+  width: 1200px;
+}
+
+.search-things{
+  display: flex;
+  justify-content: space-between;
+
+  width: 1500px;
+  height: 50px;
+  .genre-select {
+    display: flex;
+    justify-content: flex-start;
+    width: 600px;
+    select {
+      margin: 0 30px;
+      // background-color: transparent;
+    }
+    .game-search-box {
+      width: 250px;
+      height: 40px;
+      
+    }
+  }
+  .price-select {
+    display: flex;
+    justify-content: flex-end;
+    width: 600px;
+  }
+}
+
+.navbar {
+  background-color: rgb(0, 52, 137);
+  font-weight: bolder;
+  a{
+    color: white;
+  }
+}
+
+
+
+
+.profile-container{
+  display: flex;
+  flex-direction: column;
+  padding-top: 150px;
+  .profile-details {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 300px;
+      height: 300px;
+    }
+    .like-button {
+      width: 300px;
+      height: 70px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .rating {
+      height: 75px;
+      width: 40px;
+    }
+  }
+
+}
+
+
+// .game-page {
+//   display: flex;
+//   justify-content: center;}
+
 
 
 

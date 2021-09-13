@@ -1,0 +1,11 @@
+{
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#d7d73e",
+    "titleBar.activeBackground": "#d7d73e",
+    "titleBar.inactiveBackground": "#d7d73e",
+    "statusBar.foreground": "#000",
+    "titleBar.inactiveForeground": "#000",
+    "titleBar.activeForeground": "#000",
+  },
+  "window.title": "PS4 Frontend"
+}

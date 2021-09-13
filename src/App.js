@@ -1,20 +1,40 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-// import axios from 'axios'
+// import SecureRoute from './components/common/SecureRoute.js'
 import Landing from './components/auth/Landing.js'
 import Register from './components/auth/Register.js'
+import Login from './components/auth/Login.js'
+import GameStore from './components/games/Store.js'
+import GameProfile from './components/games/GameProfile.js'
+import Navbar from './components/common/Navbar.js'
+import GameNew from './components/games/GameNew.js'
+
 
 function App() {
+
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
           <Landing />
         </Route>
-      </Switch>
-      <Switch>
+        <Route path ="/games/new">
+          <Navbar />
+          <GameNew />
+        </Route>
+        <Route path ="/games/:gameId">
+          <Navbar />
+          <GameProfile />
+        </Route>
+        <Route path ="/games">
+          <Navbar />
+          <GameStore />
+        </Route>
         <Route path ="/register">
           <Register />
+        </Route>
+        <Route path ="/login">
+          <Login />
         </Route>
       </Switch>
     </BrowserRouter>
