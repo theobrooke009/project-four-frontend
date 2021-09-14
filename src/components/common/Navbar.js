@@ -37,10 +37,13 @@ function Navbar() {
             >
             </span>
           </div>
+
           <div className="navbar-start">
-            <Link to="/games/search/" className="navbar-item">
-              Search
-            </Link>
+            {isAuth && (
+              <Link to="/profile/" className="navbar-item">
+                Profile
+              </Link>
+            )}
             {isAuth && (
               <Link to="/games/new/" className="navbar-item">
                 Submit a Game

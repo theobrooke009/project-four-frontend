@@ -129,7 +129,7 @@ function GameNew() {
             </div>
 
             <div className="field">
-              <label className="label">Is this a full game or a demo or Cyberpunk 2077 lol?</label>
+              <label className="label">Is this a full game or a demo?</label>
               <div className="control">
                 <input 
                   className={`input ${formErrors.fullGame ? 'is-danger' : ''}`}

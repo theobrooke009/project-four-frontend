@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { getToken } from './auth'
 
+
 const baseUrl = '/api'
 
 function headers() {
@@ -28,6 +29,19 @@ export function getOneGame(gameId) {
 
 export function createGame(formdata) {
   return axios.post(`${baseUrl}/games/`, formdata, headers())
+}
+
+export function createComment(gameId, formData) {
+  return axios.post(`${baseUrl}/games/${gameId}/comments/`, formData, headers())
+}
+
+
+export function getUser() {
+  return axios.get(`${baseUrl}/auth/profile`, headers())
+}
+
+export function likeGame(gameId) {
+  return axios.post(`${baseUrl}/games/${gameId}/like/`, headers())
 }
 
 

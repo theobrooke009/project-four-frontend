@@ -2,6 +2,8 @@ import React from 'react'
 import { useHistory } from 'react-router'
 import newUser from '../../images/new-user.png'
 import logo from '../../images/ps4-logo.png'
+import psStore from '../../images/ps-store.png'
+import psLogin from '../../images/ps-login.png'
 
 function LoginOrRegister() {
 
@@ -13,6 +15,8 @@ function LoginOrRegister() {
       history.push('/login')
     else if (event.target.alt === 'register')
       history.push('/register/')
+    else if (event.target.alt === 'store')
+      history.push('/games/')
   }
   return (
     <div className='main'>
@@ -31,26 +35,19 @@ function LoginOrRegister() {
                 </div>
               </div>
               <div className='landing'>
-                <div 
-                  onClick={handleClick}
-                  alt='login'>
-                  <h1>USER PROFILE</h1>
+                <div alt='register'
+                  onClick={handleClick}>
+                  <img id='new-user' src={psLogin} alt='login'/>
                 </div>
               </div>
               <div className='landing'>
                 <div 
                   onClick={handleClick}
                   alt='login'>
-                  <h1>USER PROFILE</h1>
+                  <img id="new-user" src={psStore} alt='store'/>
                 </div>
               </div>
-              <div className='landing'>
-                <div 
-                  onClick={handleClick}
-                  alt='login'>
-                  <h1>USER PROFILE</h1>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>

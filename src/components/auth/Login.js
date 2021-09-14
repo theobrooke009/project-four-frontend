@@ -68,7 +68,8 @@ function Login() {
           <div className='field '>
             <label className='label'>Password</label>
             <div className='control'>
-              <input className='register-input' 
+              <input className='register-input'
+                type="password"
                 placeholder='Password'
                 onChange={handleChange}
                 name='password'/>
