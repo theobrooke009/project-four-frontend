@@ -8,7 +8,7 @@ import GameStore from './components/games/Store.js'
 import GameProfile from './components/games/GameProfile.js'
 import Navbar from './components/common/Navbar.js'
 import GameNew from './components/games/GameNew.js'
-import GameComments from './components/games/GameComments.js'
+// import GameComments from './components/games/GameComments.js'
 import SecureRoute from './components/common/SecureRoute.js'
 import UserProfile from './components/common/UserProfile.js'
 
@@ -25,10 +25,10 @@ function App() {
           <Navbar />
           <GameNew />
         </SecureRoute>
-        <Route path ="/games/:gameId/comments">
+        {/* <Route path ="/games/:gameId/comments">
           <Navbar />
           <GameComments />
-        </Route>
+        </Route> */}
         <Route path ="/games/:gameId">
           <Navbar />
           <GameProfile />

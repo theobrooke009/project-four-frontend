@@ -7,7 +7,7 @@ function GameCard({ game }) {
         <div className="games-card">
           <div className="card-image">
             <figure className="image  menu-image">
-              <img src={game.image} alt={game.name} />
+              <img className="game-profile-image" src={game.image} alt={game.name} />
             </figure>
           </div>
           <div className="card-content">

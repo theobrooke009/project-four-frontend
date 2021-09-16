@@ -6,7 +6,7 @@ const initialState = {
   text: '',
 }
 
-function Newtext() {
+function UserCommentCard() {
   const { gameId } = useParams()
   const history = useHistory()
   const [formData, setFormData] = React.useState(initialState)
@@ -23,25 +23,25 @@ function Newtext() {
     try {
       await createComment(gameId, formData)
       history.push(`/games/${gameId}`)
+      location.reload()
       
     } catch (err) {
       console.log(err)
     }
   }
-
   return (
-    <section className="section">
+    <section className="review-section">
       <div className="container">
         <div className="columns">
           <form
             className="column text-container"
             onSubmit={handleSubmit}>
             <div className="field">
-              <label className="label">Comment</label>
-              <div>
+            
+              <div className="post-review">
                 <textarea
                   className={`text-box input ${formErrors.text ? 'is-danger' : ''}`}
-                  placeholder="text"
+                  placeholder="Write your review here..."
                   name="text"
                   onChange={handleChange}
                   value={formData.text}
@@ -53,8 +53,11 @@ function Newtext() {
               )}
             </div>
             <div className="field">
-              <button type="submit" className="button is-info is-fullwidth">
-                Submit text
+              <button 
+                type="submit" 
+                className="button is-info is-fullwidth"
+                placeholder="Leave your review...">
+                Leave Review
               </button>
             </div>
           </form>
@@ -64,4 +67,4 @@ function Newtext() {
   )
 }
 
-export default Newtext
+export default UserCommentCard

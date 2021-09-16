@@ -41,7 +41,7 @@ export function getUser() {
 }
 
 export function likeGame(gameId) {
-  return axios.post(`${baseUrl}/games/${gameId}/like/`, headers())
+  return axios.post(`${baseUrl}/games/${gameId}/like/`, null, headers())
 }
 
 

@@ -11,7 +11,7 @@ const initialState = {
   fullGame: '',
   gameInfo: '',
   size: '',
-  releaseDate: '',
+  releaseDate: '2021-09-16',
   developer: '',
   rating: '',
   isOfficial: false,
@@ -39,11 +39,12 @@ function GameNew() {
   }
 
   return (
-    <section className="section">
-      <div className="container">
+    <section className="new-game-section">
+      <div className="new-game-container">
         <div className="columns new-game">
+          <h1>Please fill in the below form to submit:</h1>
           <form
-            className="column submit-form is-half is-offset-one-quarter box"
+            className="column submit-form is-half box"
             onSubmit={handleSubmit}
           >
 
@@ -98,14 +99,18 @@ function GameNew() {
 
             <div className="field">
               <label className="label">Platform</label>
-              <div className="control">
-                <input 
+              <div className="control select">
+                <select
                   className={`input ${formErrors.platform ? 'is-danger' : ''}`}
                   placeholder="Console (PS4/PS5 etc)"
                   name="platform"
                   onChange={handleChange}
                   value={formData.platform}
-                />
+                >
+                  <option value=""></option>
+                  <option value="PS4">PS4</option>
+                  <option value="PS5">PS5</option>
+                </select>
               </div>
               {formErrors.platform && (
                 <p className="help is-danger">{formErrors.platform}</p>
@@ -130,14 +135,19 @@ function GameNew() {
 
             <div className="field">
               <label className="label">Is this a full game or a demo?</label>
-              <div className="control">
-                <input 
+              <div className=" select control">
+                <select
                   className={`input ${formErrors.fullGame ? 'is-danger' : ''}`}
                   placeholder="Console (PS4/PS5 etc)"
                   name="fullGame"
                   onChange={handleChange}
-                  value={formData.fullGame}
-                />
+                  value={formData.fullGame} 
+                >
+                  <option value=""></option>
+                  <option value="Full Game">Full Game</option>
+                  <option value="Add On">Add On</option>
+                  <option value="Demo">Demo</option>
+                </select>
               </div>
               {formErrors.fullGame && (
                 <p className="help is-danger">{formErrors.fullGame}</p>
@@ -176,7 +186,7 @@ function GameNew() {
               )}
             </div>
             
-            <div className="field">
+            {/* <div className="field">
               <label className="label">Date Released</label>
               <div className="control">
                 <input 
@@ -190,7 +200,7 @@ function GameNew() {
               {formErrors.releaseDate && (
                 <p className="help is-danger">{formErrors.releaseDate}</p>
               )}
-            </div>
+            </div> */}
 
             <div className="field">
               <label className="label">Developer Name</label>
@@ -209,15 +219,20 @@ function GameNew() {
             </div>
 
             <div className="field">
-              <label className="label">Rating</label>
+              <label className="label">ESRB Rating</label>
               <div className="control">
-                <input 
+                <select
                   className={`input ${formErrors.rating ? 'is-danger' : ''}`}
                   placeholder="Age Rating"
                   name="rating"
                   onChange={handleChange}
                   value={formData.rating}
-                />
+                >
+                  <option value=""></option>
+                  <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/ESRB_2013_Mature.svg/440px-ESRB_2013_Mature.svg.png">M</option>
+                  <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/ESRB_Teen.svg/430px-ESRB_Teen.svg.png">T</option>
+                  <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/ESRB_Everyone.svg/430px-ESRB_Everyone.svg.png">E</option>
+                </select>
               </div>
               {formErrors.rating && (
                 <p className="help is-danger">{formErrors.rating}</p>

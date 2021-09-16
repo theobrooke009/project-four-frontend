@@ -89,7 +89,7 @@ function GameStore() {
   console.log(filterGames)
 
   return (
-    <section className="section">
+    <section className="store-section">
    
       <div className="search-things is-fluid"> 
         <button 
