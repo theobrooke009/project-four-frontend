@@ -14,7 +14,7 @@ function LoginOrRegister() {
     if (event.target.innerHTML === 'login')
       history.push('/login')
     else if (event.target.alt === 'register')
-      history.push('/register/')
+      history.push('/register')
     else if (event.target.alt === 'store')
       history.push('/games/')
   }

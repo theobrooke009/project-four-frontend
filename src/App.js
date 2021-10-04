@@ -11,6 +11,7 @@ import GameNew from './components/games/GameNew.js'
 // import GameComments from './components/games/GameComments.js'
 import SecureRoute from './components/common/SecureRoute.js'
 import UserProfile from './components/common/UserProfile.js'
+import UserNavbar from './components/common/UserNavbar.js'
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Login />
         </Route>
         <Route path ="/profile">
+          <UserNavbar />
           <UserProfile />
         </Route>
       </Switch>

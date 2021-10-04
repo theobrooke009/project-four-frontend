@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useParams } from 'react-router-dom'
-import { getAllGames, getOneGame, likeGame } from '../lib/api'
+import { getAllGames, getOneGame, likeGame, getUser } from '../lib/api'
 // import GameCard from './GameCard'
 import CommentCard from './CommentCard'
 import RecommendCard from './RecommendCard'
@@ -13,11 +13,13 @@ function ShowOneGame() {
   const { gameId } = useParams()
   const [game, setGame] = React.useState(null)
   const [allGames, setAllGames] = React.useState(null)
+  const [user, setUser] = React.useState(null)
   const [isError, setIsError] = React.useState(false)
   const [content, setContent] =  React.useState('Recommendations')
   
 
   console.log(isError)
+  console.log(user)
 
 
   React.useEffect(() => {
@@ -44,8 +46,27 @@ function ShowOneGame() {
     getData()
   },[gameId])
 
+  React.useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await getUser()
+        setUser(response)
+      } catch (err) {
+        setIsError(true)
+      }
+    } 
+    getData()
+  },[] )
 
-  const OnClick = () => {
+
+  const OnClick = (e) => {
+    console.log(e.target.textContent)
+    if ( e.target.textContent.includes('Already purchased') || e.target.textContent.includes('Purchased')  ) {
+      e.target.textContent = `Add to cart     £${game.price}`
+    } else if (e.target.textContent.includes('Add to cart')){
+      e.target.textContent = 'Purchased!'
+    }
+
     return likeGame(gameId)
   }
   const filterByGenre = () => {
@@ -76,8 +97,30 @@ function ShowOneGame() {
               <div className="profile-details">
                 <div className="column is-one-third">
                   <img src={game.image} alt={game.name}/> 
-                  <button className="like-button button is-info"
-                    onClick={OnClick}> <div>Add to cart</div><div>£{game.price}</div></button>
+
+                  <div>
+                    {user && game && !user.data.likedGames.some(e => e.name === game.name) &&
+                  
+                    <button className="like-button button is-info"
+                      onClick={OnClick}>
+                      <div>Add to cart</div><div>£{game.price}</div>
+                    </button>
+                    }
+                  </div>
+
+                  <div>
+                    {user && game && user.data.likedGames.some(e => e.name === game.name)  &&
+                  
+                    <button className="like-button button is-info"
+                      onClick={OnClick}>
+                      <div>Already purchased</div>
+                    </button>
+                    }
+                  </div>
+                
+
+
+
                   <div> 
                     <h3
                       onClick={handleContent}
@@ -110,7 +153,12 @@ function ShowOneGame() {
                   </div>
                   <div className="game-outline">
                     <h2 clasName="info-title"> Game Info: </h2>
-                    <p>{game.gameInfo}</p>
+                    <div className="game-blurb">
+                      <p>{game.gameInfo}</p>
+
+                      <p>The PlayStation 4 was released to critical acclaim, with critics praising Sony for acknowledging its consumers needs, embracing independent game development, and for not imposing the restrictive digital rights management schemes like those originally announced by Microsoft for the Xbox One. Critics and third-party studios, before its launch, also praised the capabilities of the PlayStation 4 in comparison to its competitors; developers described the performance difference between the console and Xbox One as significant and obvious. Heightened demand also helped Sony top global console sales. By October 2019, PS4 became the second best-selling home game console of all time, behind the PlayStation 2. </p>
+
+                    </div>
                   </div>
                   <div>
 

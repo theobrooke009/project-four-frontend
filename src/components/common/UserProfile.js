@@ -3,7 +3,7 @@ import { getUser } from '../lib/api'
 import { Link } from 'react-router-dom'
 import UserGames from '../games/UserGames.js'
 import ProfileStore from '../../images/ps-store.png'
-import PsPlus from '../../images/ps-plus.png'
+
 
 function ShowUser() {
   // const { userId } = useParams()
@@ -27,24 +27,7 @@ function ShowUser() {
 
   return (
     <div>
-      <div className="user-nav columns">
-        <div className="plus-image column is-half">
-          <img className="plus" src={PsPlus} />
-        </div>
-        <div className="user-details column is half">
-          <div>
-            {user &&
-          <img className="profile-image" src={user.data.profileImage} />
-            }
-          
-          </div>  
-          <div>
-            {user &&
-          <h1>{user.data.username}</h1>
-            }
-          </div>
-        </div>
-      </div>
+ 
     
 
       <div className="user-games">

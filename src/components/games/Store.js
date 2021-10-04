@@ -107,9 +107,16 @@ function GameStore() {
               value={formData.genre}
               onChange={handleChange}>
               <option value="Add Filter" disabled>Add Filter</option>
+              <option value="Add Filter">All</option>
               <option value="Action">Action</option>
-              <option value="Stealth Action">Stealth Action</option>
+              <option value="Stealth Action">Platformer</option>
               <option value="RPG">RPG</option>
+              <option value="Survival Horror">Survival Horror</option>
+              <option value="Fighting">Fighting</option>
+              <option value="Racing">Racing</option>
+              <option value="First Person Shooter">First Person Shooter</option>
+              <option value="Strategy">Strategy</option>
+              <option value="Stealth Action">Stealth Action</option>
             </select>
           </div>
 

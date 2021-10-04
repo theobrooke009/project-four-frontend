@@ -35,6 +35,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: space-between;
+  padding: 0;
+ 
   h1 {
     font-size: 25px;
     padding: 0 15px;
@@ -327,7 +329,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 150px;
+  padding-top: 100px;
   .profile-details {
     display: flex;
     justify-content: space-between;
@@ -478,14 +480,31 @@ font-weight:bolder;
 
 }
 
+.user-nav {
+  position: fixed;
+  right: 0;
+  left: 0;
+  overflow-x: scroll;
+}
+
 .info-title {
   padding: 5px, 15px;
    color: white;
   }
 
+.game-title {
+  padding-bottom: 15px;
+}
+
+.game-blurb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 
 .user-nav {
-  padding-top: 30px;
+  padding-top: 20px;
   display: flex;
   img {
     height: 40px;
@@ -493,13 +512,25 @@ font-weight:bolder;
   }
 }
 
+.user-prof-log-out{
+
+  margin-right: 25px;
+}
+
+.logout {
+  display: flex;
+  justify-content: flex-end;;
+}
+
 .user-games {
   display: flex;
-  height: 300px;
+  height: auto;
+  width: 2500px;
+  overflow-x: scroll;
  
   .games-menu {
     display: flex;
-    margin-top: 40px;
+    margin-top: 140px;
     img {
       
       height: 400px;

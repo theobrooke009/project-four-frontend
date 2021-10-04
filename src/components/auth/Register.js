@@ -72,6 +72,7 @@ function Register() {
             <label className='label'>Password Confirmation</label>
             <div className='control'>
               <input className='register-input'  
+                type="password"
                 placeholder='Password Confirmation'
                 onChange={handleChange}
                 name='passwordConfirmation'/>
